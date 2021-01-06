@@ -3,14 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
-  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>S12 Team 3 MC01</title>
 </head>
 <body>
-  <div class="row">
-    <div class="col-2">Sidebar</div>
-    <div class="col-10">Content</div>
+  <div id="app" class="row">
+    <div id="sidebar" class="col-2 d-flex flex-column">
+      <h3>Team 3</h3>
+      <h5>S12</h5>
+      
+      <b>1 Table Queries</b>
+      <a href="#">Query 1</a>
+      <a href="#">Query 2</a>
+
+      <b>2 Table Queries</b>
+      <a href="#">Query 1</a>
+      <a href="#">Query 2</a>
+
+      <b>3 Table Queries</b>
+      <a href="#">Query 1</a>
+      <a href="#">Query 2</a>
+
+      <b>4+ Table Queries</b>
+      <a href="#">Query 1</a>
+
+      <footer>See our <a href="#">Notion</a></footer>
+    </div>
+
+    <div id="content" class="col-10">
+      
+      <h1>Query statement goes here</h1>
+      
+      <div id="search-params">
+        <h3>
+          Search Parameters
+        </h3>
+        
+        <!-- START: Template for inputs -->
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Age</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <!-- END: Template for inputs-->
+
+        <button class='btn btn-success'>Render Report</button>
+      </div>
+      
+      <div id="table-holder">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
   </div>
 </body>
 </html>
