@@ -1,0 +1,63 @@
+<div id="app" class="row">
+  {{>sidebar}}
+
+  <div id="content" class="col-10">
+    
+    <h1>List the top 5 highest average points per college in a season</h1>
+    
+    <div id="search-params">
+      <h3>
+        Search Parameters
+      </h3>
+      
+      <!-- Form: don't forget to change action to appropriate -->
+      <form method="POST" action="/query3-2" enctype='application/x-www-form-urlencoded' novalidate>
+        <div class="input">
+          <!-- Duplicate this for more inputs. Change id and name of input. -->
+
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Season</label>
+            <div class="col-sm-10">
+              <select class="custom-select" name="season">
+                <option selected>Select a Season</option>
+                {{#each seasons}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+              </select>
+            </div>
+          </div>
+          
+          <!-- SUBMIT BUTTON NO NEED TO CHANGE -->
+          <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+              <button type="submit" class='btn btn-success'>Render Report</button>
+            </div>
+          </div>
+          
+        </div>
+      </form>
+
+      <b>Time Elapsed: </b> {{time}}
+
+    </div>
+    
+    <div id="table-holder">
+      <!-- TODO: Change table headers to appropirate results' headers-->
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Team</th>
+            <th>Season</th>
+            <th>Average Points</th>
+          </tr>
+        </thead>
+        <tbody id='tableBody'>
+          {{#each result}}
+            <tr><td>{{College}}</td><td>{{Current_Season}}</td><td>{{'AVG(st.AvgPoints)'}}</td></tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
