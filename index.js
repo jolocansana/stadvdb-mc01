@@ -31,11 +31,13 @@ app.get('/', (req,res) => {
 
 app.post('/', (req,res) => {
   let sql = `SELECT * FROM Players WHERE PlayerID = ?`
+  let startTime = (new Date).getTime();
 
   db.all (sql, [req.body.playerid], (err, rows) => 
       {
         res.render('index', {
-          result: rows
+          result: rows,
+          time: ((new Date).getTime() - startTime)+'ms'
         })
       }
   )
