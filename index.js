@@ -1,10 +1,10 @@
 const sqlite3 = require('sqlite3').verbose();
 const express = require('express')
 const bodyParser = require('body-parser')
-const envPort = require('./public/config.js')
+const envPort = require('./config.js')
 
 var app = express()
-var port = envPort || 3000;
+var port = envPort.port || 3000;
 var hbs = require('express-handlebars')
 
 let db = new sqlite3.Database('nba.db');
