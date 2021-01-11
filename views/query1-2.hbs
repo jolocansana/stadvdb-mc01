@@ -3,7 +3,7 @@
 
   <div id="content" class="col-10">
     
-    <h1>List the top 3 countries that is not the US per average stats group by draft year in a particular season</h1>
+    <h1>Get count and the average stats of players grouped by their number of games played</h1>
     
     <div id="search-params">
       <h3>
@@ -11,45 +11,42 @@
       </h3>
       
       <!-- Form: don't forget to change action to appropriate -->
-      <form method="POST" action="/query4-1" enctype='application/x-www-form-urlencoded' novalidate>
+      <form method="POST" action="/query1-2" enctype='application/x-www-form-urlencoded' novalidate>
         <div class="input">
           <!-- Duplicate this for more inputs. Change id and name of input. -->
-
           <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Stats</label>
             <div class="col-sm-10">
               <select class="custom-select" name="stats">
                 <option selected>Select Statistic</option>
                 {{#each stats}}
-                <option value="{{this}}">{{this}}</option>
+                  <option value="{{this}}">{{this}}</option>
                 {{/each}}
               </select>
             </div>
           </div>
 
           <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Draft Year</label>
-            <div class="col-sm-10">
-              <select class="custom-select" name="draft_year">
-                <option selected>Select a Draft Year</option>
-                {{#each draft_year}}
-                <option value="{{this}}">{{this}}</option>
-                {{/each}}
-              </select>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Games Played Range (1 - 80)</label>
+            <div class="form-inline col-10">
+              <label class="sr-only" for="min"> Minimum</label>
+              <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Min</div>
+                </div>
+                <input type="text" class="form-control" id="min" name="min" placeholder="Minimum">
+              </div>
+    
+              <label class="sr-only" for="max">Maximum</label>
+              <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Max</div>
+                </div>
+                <input type="text" class="form-control" id="max" name="max" placeholder="Maximum">
+              </div>
             </div>
           </div>
-
-          <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Season</label>
-            <div class="col-sm-10">
-              <select class="custom-select" name="season">
-                <option selected>Select a Season</option>
-                {{#each seasons}}
-                <option value="{{this}}">{{this}}</option>
-                {{/each}}
-              </select>
-            </div>
-          </div>
+  
           
           <!-- SUBMIT BUTTON NO NEED TO CHANGE -->
           <div class="form-group row">
@@ -70,14 +67,14 @@
       <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th>Country</th>
-            <th>Average of {{chosen_stat}}</th>
-            <th>Count of {{chosen_stat}}</th>
+            <th>Games Played</th>
+            <th>Number of Players</th>
+            <th>Average of Statistic</th>
           </tr>
         </thead>
         <tbody id='tableBody'>
           {{#each result}}
-            <tr><td>{{country}}</td><td>{{AvgStat}}</td><td>{{CountStat}}</td></tr>
+            <tr><td>{{Games_Played}}</td><td>{{Count}}</td><td>{{Average_Stat}}</td></tr>
           {{/each}}
         </tbody>
       </table>
