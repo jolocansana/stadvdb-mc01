@@ -114,6 +114,7 @@ app.post('/query1-1', (req,res) => {
       {
         res.render('query1-1', {
           stats: stats_query1_1,
+          selected_stat: req.body.stats,
           result: rows,
           time: ((new Date).getTime() - startTime)+'ms'
         })
@@ -177,6 +178,7 @@ app.post('/query1-2', (req,res) => {
       {
         res.render('query1-2', {
           stats: stats,
+          selected_stat: req.body.stats,
           result: rows,
           time: ((new Date).getTime() - startTime)+'ms'
         })

@@ -45,6 +45,10 @@ a:hover {
   color: black
 }
 
+.blue-hover:hover {
+  background-color: lightblue;
+}
+
 footer {
   margin-top: 2em;
   box-sizing: border-box;
